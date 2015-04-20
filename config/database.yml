@@ -1,0 +1,39 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+
+development:
+  <<: *default
+  database: gproject_development
+  username: root
+  password:
+  host: localhost
+
+test:
+  <<: *default
+  database: gproject_test
+  username: root
+  password:
+  host: localhost
+
+staging:
+  <<: *default
+  database: gproject_staging
+  username: root
+  password:
+  host: localhost
+
+production:
+  <<: *default
+  database: gproject_production
+  username: root
+  password:
+  host: localhost
