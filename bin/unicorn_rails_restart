@@ -9,7 +9,7 @@ PROCESSNAME="unicorn_rails master"
 # how long should we let the hot restart go before we call it a fail
 TIMEOUT=240 # seconds
 # command to kick start unicorn if things arent working out
-UNICORN_START="cd $RAILS_ROOT; bundle exec unicorn_rails -c ./config/unicorn.rb -E production -D"
+UNICORN_START="cd $RAILS_ROOT; bundle exec unicorn_rails -c ./config/unicorn.rb -E development -D"
 # monit start unicorn? /etc/init.d/unicorn start? whatever you want
 
 ###################################
