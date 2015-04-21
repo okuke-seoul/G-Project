@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '4.2.1'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
@@ -8,9 +9,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'nokogiri', '1.6.6.1'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'appsignal', '~> 0.11.9' 
+gem 'appsignal', '0.11.7'
 
 # Use unicorn as the app server
 gem 'unicorn'
