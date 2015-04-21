@@ -23,7 +23,6 @@ require "capistrano/rails/migrations"
 #require 'capistrano-nc/nc'
 
 require 'capistrano/sidekiq'
-require 'appsignal/capistrano'
 require "whenever/capistrano"
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
