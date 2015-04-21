@@ -21,9 +21,7 @@ namespace :deploy do
   task :restart => [:set_rails_env] do
     on roles(:unicorn) do
       within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute "#{release_path}/bin/unicorn_rails_restart #{release_path}"
-        end
+        execute "#{release_path}/bin/unicorn_rails_restart #{release_path}"
       end
     end
   end
