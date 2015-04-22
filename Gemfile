@@ -11,9 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use unicorn as the app server
-gem 'unicorn'
-
 # Background & queue
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
@@ -25,14 +22,14 @@ group :development, :test do
   gem 'spring'
 end
 
-group :development do
-  # Deploy with Capistrano
-  #gem 'sshkit', '~> 1.0.0' # https://github.com/capistrano/sshkit/issues/39#issuecomment-28999273
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rbenv', '~> 2.0.3'
+group :development, :test do
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn' #Unicornの起動を簡単に行える
+end
 
-  gem 'capistrano-nc', '~> 0.1.0', require: false
-  gem 'capistrano-sidekiq', '~> 0.5.2'
+group :production, :staging do
+  gem 'unicorn'
 end

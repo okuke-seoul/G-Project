@@ -1,18 +1,14 @@
-set :stage, :production
-set :rails_env, 'production'
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
 
-set :deploy_to, "/home/deploy/#{fetch(:application)}"
+role :app, %w{deploy@geniearth.com}
+role :web, %w{deploy@geniearth.com}
+role :db,  %w{deploy@geniearth.com}
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-set :branch,     'production'
+server 'geniearth.com', user: 'deploy', roles: %w{web app db}
 
-# set :sidekiq_role,   :sidekiq
-# set :sidekiq_pid,    ->{ "tmp/pids/sidekiq.pid" }
-#set :sidekiq_cmd,    'bin/sidekiq'
-#set :sidekiqctl_cmd, ->{ "#{fetch(current_path)} bin/sidekiqctl" }
-
-# set :whenever_roles, [:cron]
-# set :whenever_command, "#{fetch(:rbenv_path)}/shims/whenever"
-
-server 'onesup', user: 'deploy', roles: %w{app web unicorn db}, primary: true
-# server 'onesup1', user: 'deploy', roles: %w{app unicorn sidekiq cron}
+set :ssh_options, {
+  # keys: %w(/home/deploy/.ssh/id_rsa),
+  # forward_agent: false,
+  # auth_methods: %w(publickey)
+}
