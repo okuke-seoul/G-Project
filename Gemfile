@@ -22,12 +22,14 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
-  gem 'capistrano3-unicorn' #Unicornの起動を簡単に行える
+  gem 'capistrano3-unicorn'
 end
 
 group :production, :staging do
