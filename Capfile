@@ -12,6 +12,6 @@ require 'capistrano/rails/migrations'
 
 require 'capistrano3/unicorn'
 
-# set :linked_files, %w{config/secrets.yml .env}
+set :linked_files, %w{config/secrets.yml .env}
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
