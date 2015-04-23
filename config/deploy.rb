@@ -1,7 +1,7 @@
 lock '3.2.1'
 
 set :application, 'g-project'
-set :repo_url, 'git@github.com:mrbrunokim/G-Project.git'
+set :repo_url, 'git@github.com:onesup/G-Project.git'
 set :branch, 'master'
 set :deploy_to, '/home/deploy/g-project'
 set :scm, :git
@@ -13,7 +13,6 @@ set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     invoke 'unicorn:restart'
